@@ -1,0 +1,6 @@
+- Integrate authentication.
+- Setup pull and push workflows for local supabase deployment.
+- subdomain routing
+- auth setup for NextJS App
+- api setup
+-
