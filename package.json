@@ -7,7 +7,13 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "shadd": "cd apps/web && pnpx shadcn@canary add "
+    "shadd": "cd apps/web && pnpx shadcn@canary add",
+    "db:init": "cd packages/supabase-config && pnpm init-db",
+    "db:start": "cd packages/supabase-config && pnpm start",
+    "db:stop": "cd packages/supabase-config && pnpm stop",
+    "db:reset": "cd packages/supabase-config && pnpm reset",
+    "db:gen-types:remote": "cd packages/supabase-config && pnpm gen-types:remote",
+    "db:gen-types:local": "cd packages/supabase-config && pnpm gen-types:local"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
@@ -19,5 +25,15 @@
   "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "esbuild",
+      "supabase"
+    ],
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "supabase"
+    ]
   }
 }

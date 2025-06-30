@@ -1,0 +1,41 @@
+{
+  "name": "@workspace/supabase-config",
+  "version": "1.0.0",
+  "description": "Supabase config and types.  Handles local deployment and database management commands",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./database.types": {
+      "types": "./dist/database.types.d.ts",
+      "import": "./dist/database.types.js",
+      "require": "./dist/database.types.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "init-db": "pnpm supabase init",
+    "start": "pnpm supabase start",
+    "stop": "pnpm supabase stop",
+    "reset": "pnpm supabase db reset",
+    "migrations:diff": "pnpm supabase db diff --use-migra -f",
+    "gen-types:remote": "pnpm supabase gen types typescript --project-id qsfjjqzxpjxdrfxufzxn --schema public,vector > src/database.types.ts",
+    "gen-types:local": "pnpm supabase gen types typescript --local --schema public,vector > src/database.types.ts"
+  },
+  "dependencies": {
+    "@workspace/app-config": "workspace:*",
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@workspace/typescript-config": "workspace:*",
+    "supabase": "^2.26.9",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
