@@ -69,8 +69,8 @@ const config: AppConfig = {
     maxRequests: parseInt("100", 10),
   },
   supabase: {
-    url: env("SUPABASE_URL"),
-    anonKey: env("SUPABASE_ANON_KEY"),
+    url: env("NEXT_PUBLIC_SUPABASE_URL"),
+    anonKey: env("NEXT_PUBLIC_SUPABASE_ANON_KEY"),
     serviceRoleKey: env("SUPABASE_SERVICE_ROLE_KEY"),
     jwtSecret: env("SUPABASE_JWT_SECRET"),
   },
